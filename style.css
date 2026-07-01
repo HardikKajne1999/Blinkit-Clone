@@ -14,14 +14,16 @@ html,body {
   width: 100%;
   height: 100%;
 }
-
+a{
+  text-decoration: none;
+}
 header{
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 0 0.15rem gray;
-  padding-bottom: 0.5rem;
+  /* padding-bottom: 0.5rem; */
   /* flex-basis: 32%;
   padding: 1%; */
 }
@@ -30,13 +32,24 @@ header{
   align-items: center;
 }
 .logo{
-  padding: 1rem 1.8rem;
-  border-right: 1px solid gray;
+  padding: 1.8rem;
+  box-shadow: 0 0 0.04rem  gray;
+}
+.logo:hover{
+  background-color: rgba(241, 239, 239, 0.463);
+  cursor: pointer;
+
 }
 .address{
-  padding: 1rem 1.8rem;
+  padding: 1.5rem;
+  
+}
+.address:hover{
+  cursor: pointer;
+  background-color: rgba(241, 239, 239, 0.463);
 }
 .address h2{
+  
   margin-bottom: 0.5rem;
   font-size: 1.15rem;
 }
@@ -67,12 +80,9 @@ header{
 }
 .searchBox  i{
   color: #aaa;
-
 }
 .headerRight{
   margin-right: 1.5rem;
-  /* flex-basis: 32%;
-  padding: 0.5%; */
 }
 .loginDiv{
   cursor: pointer;
@@ -101,7 +111,7 @@ header{
 .loginDiv{
   display: none;
 }
-/* 
+
 .bannerSection{
   display: flex;
   flex-wrap: wrap;
@@ -111,11 +121,176 @@ header{
 .card{
   flex-basis: 23%;
   margin: 1%;
+  cursor: pointer;
 }
 .card img{
   width: 100%;
 } 
-*/
+.banner{
+  cursor: pointer;
+  max-width: 1280px;
+  margin-inline: auto;
+}
+.banner img{
+  width: 100%;
+}
+
+/* items section */
+.items{
+  max-width: 1320px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(8rem,1fr));
+  
+}
+
+.item{
+  margin-inline: auto;
+  transition: transform 0.25s ease;
+}
+.item:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.item img{
+  max-width: 100%;
+}
+/* products section */
+.products{
+  max-width: 1320px;
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+.product-heading{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
+.product-heading h3{
+  letter-spacing: -0.05rem;
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+.product-heading a, .footer-part2 .footer-head a{
+  color: rgb(63, 197, 1);
+  font-weight: bold;
+}
+
+.product-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
+  gap: 1rem;
+  padding-bottom: 2rem;
+}
+.product{
+  margin-bottom: 2rem;
+}
+.product-img{
+  box-shadow: 0 0 0.15rem grey;
+  border-radius: 1rem;
+  margin-bottom: 0.85rem;
+}
+.product-img:hover{
+  cursor: pointer;
+}
+.product-img:hover img{
+  transform: scale(1.1);
+}
+.product-img img{
+  transition: transform 0.35s ease;
+  width: 100%;
+}
+.product-info p{
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: -0.05rem;
+}
+.product-info h4{
+  margin-block: 0.5rem;
+  font-size: 1rem;
+}
+.product-cost{
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.product-cost button{
+  padding: 0.5rem 0.8rem;
+  color: rgb(63, 197, 1);
+  background-color: rgba(63, 197, 1, 0.132);;
+  border: 0.1rem solid rgb(63, 197, 1);
+  text-transform: uppercase;
+  border-radius: 0.75rem;
+  font-weight: bold;
+  transition: transform 0.25s ease;
+}
+.product-cost button:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+/* cleaners section */
+.cleaners{
+  max-width: 1320px;
+  margin-inline: auto;
+  display: none;
+}
+.cleaner-img{
+  width: 100%;
+}
+
+/* promotion section */
+.promotion{
+  padding: 5rem 2rem;
+  background-color: rgb(237, 235, 235); 
+}
+.promotion span{
+  color: red;
+}
+.promotion h1{
+  color: #999;
+  font-size: 5rem;
+  padding-bottom: 3rem;
+  border-bottom: 0.1rem solid #ddd;
+}
+.promotion h3{
+  color: #ccc;
+  font-size: 2rem;
+  margin-top: 3rem;
+}
+
+/* footer  */
+.footer{
+  padding: 2rem;
+}
+.footer-head{
+  display: flex;
+  gap: 3rem;
+}
+.footer-part1 li, .footer-part2 li{
+  list-style: none;
+  font-size: 0.85rem;
+}
+.footer-part2{
+  padding-bottom: 3rem;
+}
+.footer-part1 li a, .footer-part2 li a{
+  color: #aaa;
+
+}
+.footer-part1 li a:hover, .footer-part2 li a:hover{
+  text-decoration: underline;
+}
+.footer-list{
+  padding-block: 1rem;
+  display: flex;
+  gap: 2.5rem;
+}
+.footer-list li{
+  padding-bottom: 0.5rem;
+}
+
 
 /* Media Query */
 /* Tablet version */
@@ -123,21 +298,26 @@ header{
   header{
     align-items: start;
     flex-direction: column;
-    position: relative;
+    padding: 0.75rem 0 1rem 0;
+    top: 0;
+    position: sticky;
+    background-color: white;
   }
   
   .headerRight{
     position: fixed; 
     bottom: 0;
+    z-index: 1000;
+    background-color: white;
     width: 100%;
     justify-content: center;
     box-shadow: 0 0 0.5rem grey;
     padding-block: 0.5rem;
   }
   .logo{
-    /* display: none; */
     padding: 0.25rem 0.65rem;
-    /* border-right: 1px solid gray; */
+    box-shadow: none;
+    border-right: 0.025rem solid grey;
   }
   .address{
     padding: 0.5rem 0.85rem;
@@ -150,44 +330,78 @@ header{
     font-size: 0.65rem;
   }
   .searchBox{
-    /* align-items: stretch; */
-    width: 95%;
     margin: auto;
+    margin-top: 0.5rem;
+    width: 95%;
   }
   .searchBox input{
     font-size: 1rem;
   }
   .loginDiv{
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: 25px;
+    top: 25px;
     display: block;
+    transform: scale(2);
   }
-  .loginDiv i{
-    font-size: 1.5rem;
+  .items, .products{
+    padding-bottom: 3rem;
   }
-  /* .header{
-    flex-direction: column;
-  }
-  .headerLeft{
-    width: 100%;
-    margin: auto;
-  } */
-  /* 
-  .bannerSection{
-    flex-direction: column;
-  }
-  .card{
-    flex-basis: 48%;
-  }
-  */
+  .cleaners{
+  max-width: 1320px;
+  margin-inline: auto;
+  display: block;
+  padding-bottom: 5rem;
+  background-color: #d8f2ff;
+}
+.cleaner-list{
+  padding-inline: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit,minmax(5rem,1fr));
+}
+.cleaner{
+  text-align: center;
+  font-size: 0.85rem;
+}
+.cleaner-img{
+  border-radius: 1rem;
+  overflow:hidden;
+  /* height: 10rem; */
+}
+.cleaner-img img{
+  width: 100%;
+}
+
+.promotion{
+  padding: 5rem 2rem;
+  background-color: rgb(237, 235, 235);
+}
+
+.promotion span{
+  color: red;
+}
+.promotion h1{
+  color: #ccc;
+  font-size: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 0.1rem solid #ddd;
+}
+.promotion h3{
+  margin-top: 3rem;
+}
+
+
 }
 /* Mobile Version */
 @media only screen and (min-width: 200px) and (max-width: 575px){
 header{
   flex-direction: column;
   align-items: start;
-  position: relative;
+  padding: 0.75rem 0 1rem 0;
+  position: sticky;
+  top: 0;
+  background-color: white;
 }
 .headerLeft{
   flex-direction: column;
@@ -196,6 +410,8 @@ header{
 .headerRight{
     box-shadow: 0 0 0.5rem grey;
     padding-block: 0.5rem;
+    z-index: 1000;
+    background-color: white;
     position: fixed; 
     bottom: 0; 
     justify-content: center;
@@ -209,7 +425,8 @@ header{
 }
 .logo{
   padding: 0.5rem 0rem 0.25rem;
-  border: none;
+  box-shadow: none;
+  
 }
 .address{
   padding: 0.35rem 0.65rem;
@@ -228,29 +445,79 @@ header{
 .searchBox{
   width: 95%;
   margin: auto;
+  margin-top: 0.5rem;
 }
 .searchBox input{
   font-size: 0.95rem;
 }
 .loginDiv{
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: 15px;
+    top: 20px;
     display: block;
+    transform: scale(1.35);
   }
   .loginDiv i{
     font-size: 1.5rem;
+  }
+
+  .bannerSection, .banner{
+    display: none;
+  }
+    
+  .items, .products{
+    padding-bottom: 3rem;
+  }
+
+  .product-heading{
+    flex-direction: column;
+    text-align: right;
+  }
+  
+  .cleaners{
+  max-width: 1320px;
+  margin-inline: auto;
+  display: block;
+  padding-bottom: 2rem;
+  background-color: #d8f2ff;
 }
-   /* 
-  .headerLeft{
-    margin: auto;
-  } */
-  /* 
-  .bannerSection{
-    flex-direction: column; 
-  }
-  .card{
-    flex-basis: 98%;
-  }
-  */
+.cleaner-list{
+  padding-inline: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit,minmax(5rem,1fr));
+}
+.cleaner{
+  text-align: center;
+  font-size: 0.65rem;
+}
+.cleaner-img{
+  border-radius: 1rem;
+  overflow:hidden;
+  /* height: 10rem; */
+}
+.cleaner-img img{
+  width: 100%;
+}
+.promotion h1{
+  font-size: 2rem;
+}
+.promotion h3{
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.promotion{  
+  margin-block: 1rem;
+  padding: 3rem 1rem;
+  background-color: rgb(237, 235, 235);
+}
+.promotion span{
+  color: red;
+}
+.promotion h1{
+  color: #ccc;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.1rem solid #ddd;
+}
 }
