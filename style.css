@@ -14,8 +14,7 @@ html,body {
   width: 100%;
   height: 100%;
 }
-body{
-}
+
 header{
   position: relative;
   display: flex;
@@ -75,6 +74,9 @@ header{
   /* flex-basis: 32%;
   padding: 0.5%; */
 }
+.loginDiv{
+  cursor: pointer;
+}
 .loginBtn button{
   padding: 0.75rem 1rem;
   border: none;
@@ -121,12 +123,16 @@ header{
   header{
     align-items: start;
     flex-direction: column;
+    position: relative;
   }
-  .headerLeft{
-    /* flex-direction: column; */
-  }
+  
   .headerRight{
-    display: none;
+    position: fixed; 
+    bottom: 0;
+    width: 100%;
+    justify-content: center;
+    box-shadow: 0 0 0.5rem grey;
+    padding-block: 0.5rem;
   }
   .logo{
     /* display: none; */
@@ -144,6 +150,7 @@ header{
     font-size: 0.65rem;
   }
   .searchBox{
+    /* align-items: stretch; */
     width: 95%;
     margin: auto;
   }
@@ -180,10 +187,25 @@ header{
 header{
   flex-direction: column;
   align-items: start;
+  position: relative;
 }
 .headerLeft{
   flex-direction: column;
   align-items: start;
+}
+.headerRight{
+    box-shadow: 0 0 0.5rem grey;
+    padding-block: 0.5rem;
+    position: fixed; 
+    bottom: 0; 
+    justify-content: center;
+    width: 100%;
+}
+.headerRight .loginBtn buttton{
+  font-size: 0.9rem;
+}
+.myCart button{
+  padding: 0.85rem;
 }
 .logo{
   padding: 0.5rem 0rem 0.25rem;
@@ -202,9 +224,7 @@ header{
 .header{
   flex-direction: column; 
 }
-.headerRight{
-  display: none;
-}
+
 .searchBox{
   width: 95%;
   margin: auto;
